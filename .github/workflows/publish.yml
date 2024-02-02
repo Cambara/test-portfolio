@@ -29,11 +29,14 @@ jobs:
         with:
           static_site_generator: next
 
+      - name: Create folder
+        run: mkdir out
+
       - name: Build with Next.js 🏗️
         run: npx next build
       
       - name: Files
-        run: ls -l
+        run: ls ./out -l
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
