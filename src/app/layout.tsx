@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import React from "react";
 import Analytics from './components/Analytics';
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Ana Rocha",

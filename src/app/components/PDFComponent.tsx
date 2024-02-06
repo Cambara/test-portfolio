@@ -15,7 +15,7 @@ const PdfObject = ({pdfUrl}:Props) => {
     return <div></div>;
   }
 
-  return <object data={pdfUrl} style={{width:'100%', height:'100vh'}}></object>
+  return <object data={pdfUrl} style={{width:'100%', height:'100vh', display: 'flex'}}></object>
 }
 
 export const PDFComponent = (props:Props) => {
