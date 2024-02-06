@@ -1,9 +1,5 @@
-import { Portfolio } from "./components/Portfolio";
 
+import { redirect } from 'next/navigation'
 export default function Home() {
-  return (
-    <div>
-      <Portfolio />
-    </div>
-  );
+  return (<>{redirect('/portfolio')}</>);
 }
