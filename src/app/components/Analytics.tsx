@@ -5,15 +5,16 @@ import { useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 const TRACKING_ID = 'G-HPL0ZLB7S2';
-ReactGA.initialize(TRACKING_ID);
+const testMode = process.env.NODE_ENV === 'production';
+ReactGA.initialize(TRACKING_ID, { testMode });
 
 export default function Analytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    console.log(`The page is now: ${pathname}?${searchParams}`);
-    ReactGA.send(window.location.pathname + window.location.search);
+    const url = searchParams.size ? `${pathname}?${searchParams}` : pathname;
+    ReactGA.send(url);
   }, [pathname, searchParams]);
   return (<></>);
 }
