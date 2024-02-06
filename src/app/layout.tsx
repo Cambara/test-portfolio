@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import React from "react";
+import Analytics from './components/Analytics';
 
 export const metadata: Metadata = {
   title: "Ana Rocha",
@@ -11,7 +13,10 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <body>{children}</body>
+      <Analytics />
+      <body>
+        {children}
+      </body>
     </html>
   );
 }
